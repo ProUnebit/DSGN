@@ -1,7 +1,7 @@
 ![Project Type](https://image.ibb.co/ea1Gx7/readme_pic.jpg)
 - - -
 ### Web-Marking
-**Project name:** *Mstore*
+**Project name:** *DSGN*
 - - -
 ## Folders
 ### stuff
