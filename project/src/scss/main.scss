@@ -1,0 +1,39 @@
+@import "partials/params-g";
+@import "partials/mixins";
+@import "partials/fonts";
+
+// $main-bg-color: $global-white;
+
+body {
+    @include clear;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    @include clear;
+}
+
+figure {
+    @include clear;
+}
+
+a {
+    text-decoration: none;
+}
+
+.view-port {
+    width: $global-view-port;
+    margin: 0 auto;
+    border: 2px solid pink;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    // background-color: $main-bg-color;
+}

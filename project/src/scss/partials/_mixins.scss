@@ -1,0 +1,18 @@
+@import "params-g";
+
+@mixin clear {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin clear-list {
+    @include clear;
+    list-style: none;
+}
+
+@mixin flex-center($dir: column) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+}

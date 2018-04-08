@@ -1,0 +1,38 @@
+@import "partials/params-g";
+@import "partials/mixins";
+
+.header {
+// |---PARAMS-LOC---|
+// $top-bg: $global-charcoal;
+// $top-text-color-1: $global-timberwolf;
+// $top-text-color-2: $global-white;
+
+// |---STYLES---|
+    &__top-bg {
+        // background: $top-bg;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        // height: $top-panel-height;
+        // color: $top-text-color-1;
+    }
+
+    &__phone-mail-panel {
+        padding-top: 24px;
+        font-size: 10px;
+    }
+
+    &__phone {
+        letter-spacing: 0.6px;
+        &::after {
+            content: "|";
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &::selection {
+            // color: $global-carrot-orange;
+        }
+    }
+}
