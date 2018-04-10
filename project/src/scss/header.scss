@@ -3,36 +3,76 @@
 
 .header {
 // |---PARAMS-LOC---|
-// $top-bg: $global-charcoal;
-// $top-text-color-1: $global-timberwolf;
-// $top-text-color-2: $global-white;
+$main-bg: $global-cream;
+$title-box-desc-text-color: $global-rifle-green;
+$title-box-icons-color: $global-pearl-aqua;
+$menu-box-bg: $global-pearl-aqua;
+$menu-box-menu-burger-color: $global-platinum;
+$menu-box-contact-text-color: $global-white;
 
 // |---STYLES---|
-    &__top-bg {
-        // background: $top-bg;
+    &__content {
+        display: grid;
+        background-color: $main-bg;
     }
 
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        // height: $top-panel-height;
-        // color: $top-text-color-1;
+    &__title-box {
+
     }
 
-    &__phone-mail-panel {
-        padding-top: 24px;
-        font-size: 10px;
+    &__logo {
+
     }
 
-    &__phone {
-        letter-spacing: 0.6px;
-        &::after {
-            content: "|";
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        &::selection {
-            // color: $global-carrot-orange;
-        }
+    &__logo-description {
+
+    }
+
+    &__soc-net-icons {
+
+    }
+
+    &__soc-net-icon {
+
+    }
+
+    &__menu-contact-box {
+
+    }
+
+    &__menu {
+
+    }
+
+    &__menu-list {
+
+    }
+
+    &__menu-item {
+
+    }
+
+    &__close-menu-button {
+
+    }
+
+    &__times-pic {
+
+    }
+
+    &__open-menu-button {
+
+    }
+
+    &__burger-pic {
+
+    }
+
+    &__address {
+
+    }
+
+    &__phone-mail {
+
     }
 }
