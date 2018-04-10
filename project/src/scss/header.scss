@@ -13,31 +13,62 @@ $menu-box-contact-text-color: $global-white;
 // |---STYLES---|
     &__content {
         display: grid;
+        grid-template-columns: 1fr 465px;
+        grid-template-rows: 500px;
         background-color: $main-bg;
     }
 
     &__title-box {
+        background: url('img/header_img.png') no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
 
+    &__logo-desc-icons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-left: 170px;
     }
 
     &__logo {
-
+        width: 162px;
+        height: 207px;
+        margin-bottom: 5px;
     }
 
     &__logo-description {
-
+        width: 95px;
+        color: $title-box-desc-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 18px;
+        text-align: left;
+        line-height: 18px;
+        text-transform: uppercase;
+        cursor: default;
     }
 
     &__soc-net-icons {
-
+        margin-top: 60px;
+        margin-left: 20px;
+        cursor: default;
     }
 
     &__soc-net-icon {
-
+        color: $title-box-icons-color;
+        font-size: 24px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: .15s linear;
+        &:hover {
+            color: $global-meat-brown;
+        }
     }
 
     &__menu-contact-box {
-
+        background-color: $menu-box-bg;
+        background-image: linear-gradient(132.85deg, transparent 50%, $global-platinum 50%, transparent 50.5%);
+        background-repeat: no-repeat;
     }
 
     &__menu {
