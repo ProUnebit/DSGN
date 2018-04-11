@@ -1,4 +1,6 @@
 ![Project Type](https://image.ibb.co/ea1Gx7/readme_pic.jpg)
+>###### HTML fragment
+![Project Type](http://image.ibb.co/iwEsKx/html_frag.png)
 - - -
 ### Web-Marking
 **Project name:** *DSGN*
@@ -8,7 +10,6 @@
 Web-Layout view (.psd, .png)
 ### project
 It's a project dir.
-
 Do it:
 ```
 npm install
