@@ -8,6 +8,8 @@ $title-box-desc-text-color: $global-rifle-green;
 $title-box-icons-color: $global-pearl-aqua;
 $menu-box-bg: $global-pearl-aqua;
 $menu-box-menu-burger-color: $global-platinum;
+$menu-box-menu-bg: $global-pastel-orange;
+$manu-box-menu-item-text-color: $global-white;
 $menu-box-contact-text-color: $global-white;
 
 // |---STYLES---|
@@ -61,49 +63,144 @@ $menu-box-contact-text-color: $global-white;
         cursor: pointer;
         transition: .15s linear;
         &:hover {
-            color: $global-meat-brown;
+            color: $global-pastel-orange;
         }
     }
 
     &__menu-contact-box {
+        position: relative;
         background-color: $menu-box-bg;
         background-image: linear-gradient(132.85deg, transparent 50%, $global-platinum 50%, transparent 50.5%);
         background-repeat: no-repeat;
     }
 
     &__menu {
-
+        // display: none;
+        display: flex;
+        position: absolute;
+        z-index: 9;
+        top: 50px;
+        right: 167px;
+        height: 120px;
+        background-color: $menu-box-menu-bg;
+        border: 3px solid $menu-box-menu-bg;
     }
 
     &__menu-list {
-
+        @include clear-list;
+        display: inline-flex;
     }
 
     &__menu-item {
+        width: 125px;
+        height: 120px;
+        color: $manu-box-menu-item-text-color;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 120px;
+        cursor: pointer;
+        transition: 0.125s linear;
+        &:hover {
+            background-color: lighten($menu-box-menu-bg, 5%);
+        }
+    }
 
+    &__menu-item--sub {
+        @extend .header__menu-item;
+        position: relative;
+        margin-top: -3px;
+        border-top: 3px solid $global-platinum;
+        transition: .35s ease-in-out;
+        &::before {
+            position: absolute;
+            content: '';
+            z-index: -1;
+            top: 0;
+            left: 0;
+            border-style: solid;
+            border-width: 160px 62.5px 0 62.5px;
+            border-color: $global-meat-brown transparent transparent transparent;
+            transition: 0.125s linear;
+        }
+        &:hover::before {
+            border-color: lighten($menu-box-menu-bg, 5%) transparent transparent transparent;
+            transition: 0.125s linear;
+        }
+        &:hover {
+            background-color: transparent;
+            transform: scale(1.2);
+            & > i {
+                color: darkred;
+                transition: 0.125s linear;
+            }
+        }
     }
 
     &__close-menu-button {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 125px;
+        height: 120px;
+        transition: 0.125s linear;
+        &:hover {
+            background-color: lighten($menu-box-menu-bg, 5%);
+        }
     }
 
     &__times-pic {
-
+        width: 28.5px;
+        height: 32.2px;
+        cursor: pointer;
+        &:hover {
+            filter: drop-shadow(1px 2px 3px $global-rifle-green);
+        }
     }
 
     &__open-menu-button {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 125px;
+        height: 120px;
+        border: 3px solid $menu-box-menu-burger-color;
+        margin: 50px auto 90px;
+        transition: 0.125s linear;
+        &:hover {
+            background-color: lighten($menu-box-bg, 5%);
+        }
     }
 
     &__burger-pic {
-
+        width: 40px;
+        height: 17px;
+        cursor: pointer;
+        &:hover {
+            filter: drop-shadow(1px 2px 3px $global-gray);
+        }
     }
 
     &__address {
-
+        width: 155px;
+        color: $menu-box-contact-text-color;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 13.5px;
+        text-align: left;
+        line-height: 14px;
+        text-transform: uppercase;
+        padding-left: 55px;
+        margin-bottom: 40px;
     }
 
     &__phone-mail {
-
+        width: 175px;
+        color: $menu-box-contact-text-color;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 13.5px;
+        text-align: left;
+        line-height: 14px;
+        text-transform: uppercase;
+        padding-left: 135px;
     }
 }

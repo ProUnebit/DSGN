@@ -1,6 +1,5 @@
-![Project Type](https://image.ibb.co/ea1Gx7/readme_pic.jpg)
-
 ![Project Type](http://image.ibb.co/iwEsKx/html_frag.png)
+
 **index.html** fragment
 - - -
 ### Web-Marking
@@ -8,7 +7,7 @@
 - - -
 ## Folders
 ### stuff
-Web-Layout view (.psd, .png)
+Web-Layout view (.psd, .png), license (.txt)
 ### project
 It's a project dir.
 
