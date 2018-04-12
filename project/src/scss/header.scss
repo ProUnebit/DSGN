@@ -75,8 +75,7 @@ $menu-box-contact-text-color: $global-white;
     }
 
     &__menu {
-        // display: none;
-        display: flex;
+        display: none;
         position: absolute;
         z-index: 9;
         top: 50px;
@@ -84,6 +83,10 @@ $menu-box-contact-text-color: $global-white;
         height: 120px;
         background-color: $menu-box-menu-bg;
         border: 3px solid $menu-box-menu-bg;
+        @keyframes open-menu {
+            from {top: -200px;}
+            to {top: 50px;}
+        }
     }
 
     &__menu-list {
@@ -103,6 +106,9 @@ $menu-box-contact-text-color: $global-white;
         transition: 0.125s linear;
         &:hover {
             background-color: lighten($menu-box-menu-bg, 5%);
+        }
+        &:active {
+            border: 3px solid gold;
         }
     }
 
@@ -154,7 +160,11 @@ $menu-box-contact-text-color: $global-white;
         height: 32.2px;
         cursor: pointer;
         &:hover {
-            filter: drop-shadow(1px 2px 3px $global-rifle-green);
+            filter: drop-shadow(1px 2px 2px $global-gray);
+        }
+        &:active {
+            width: 28.5px * 1.25;
+            height: 32.2px * 1.25;
         }
     }
 
