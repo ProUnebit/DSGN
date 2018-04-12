@@ -107,9 +107,6 @@ $menu-box-contact-text-color: $global-white;
         &:hover {
             background-color: lighten($menu-box-menu-bg, 5%);
         }
-        &:active {
-            border: 3px solid gold;
-        }
     }
 
     &__menu-item--sub {
