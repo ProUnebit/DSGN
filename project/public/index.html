@@ -12,7 +12,7 @@
 
 <div class="wrapper">
 
-<div class="header">
+<header class="header">
     <div class="header__content view-port">
         <div class="header__title-box">
             <div class="header__logo-desc-icons">
@@ -29,11 +29,11 @@
         <div class="header__menu-contact-box">
             <div class="header__menu">
                 <ul class="header__menu-list">
-                    <li class="header__menu-item">Home</li>
-                    <li class="header__menu-item">Projects</li>
-                    <li class="header__menu-item">Studio</li>
-                    <li class="header__menu-item">News</li>
-                    <li class="header__menu-item">Contact</li>
+                    <li class="header__menu-item"><a href="#">Home</a></li>
+                    <li class="header__menu-item"><a href="#projects-id">Projects</a></li>
+                    <li class="header__menu-item"><a href="#studio-id">Studio</a></li>
+                    <li class="header__menu-item"><a href="#news-id">News</a></li>
+                    <li class="header__menu-item"><a href="#contact-id">Contact</a></li>
                     <li id="sub" class="header__menu-item header__menu-item--sub">Sub &nbsp;<i class="fas fa-envelope"></i></li>
                 </ul>
                 <div class="header__close-menu-button">
@@ -47,19 +47,61 @@
             <p class="header__phone-mail">+64 9 345 6758 <br>info@dsgn-studio.com</p>
         </div>
     </div>
-</div>
+</header>
 
-<div class="projects">
+<section id="projects-id" class="projects">
     <div class="projects__content view-port">
-        next section
+        <div class="projects__menu-box">
+            <ul class="projects__nav-list">
+                <li class="projects__nav-item">All</li>
+                <li class="projects__nav-item">House</li>
+                <li class="projects__nav-item">Commercial</li>
+                <li class="projects__nav-item">Personal</li>
+                <li class="projects__nav-item">Studio Lab</li>
+            </ul>
+            <h2 class="projects__title">Projects</h2>
+        </div>
+        <!-- <div class="projects__product-box"> product-box -->
+            <div class="projects__product-miniature projects__product-miniature--1">1</div>
+            <div class="projects__product-miniature projects__product-miniature--2">2</div>
+            <div class="projects__product-miniature projects__product-miniature--3">3</div>
+            <div class="projects__product-miniature projects__product-miniature--4">4</div>
+            <div class="projects__product-miniature projects__product-miniature--5">5</div>
+            <div class="projects__product-miniature projects__product-miniature--6">6</div>
+            <div class="projects__product-miniature projects__product-miniature--7">7</div>
+            <div class="projects__product-miniature projects__product-miniature--8">8</div>
+        <!-- </div> -->
+        <div class="projects__timeline-box">
+            <h4 class="projects__timiline-title">Timeline</h4>
+            <ul class="projects__timeline-list">
+                <li class="projects__timeline-item">2017</li>
+                <li class="projects__timeline-item">2015</li>
+                <li class="projects__timeline-item">2013</li>
+                <li class="projects__timeline-item">2012</li>
+                <li class="projects__timeline-item">2010</li>
+            </ul>
+        </div>
+        <div class="projects__product-single">Single Product</div>
     </div>
-</div>
+</section>
 
-<div class="studio"></div>
+<section id="studio-id" class="studio">
+    <div class="studio__content view-port">
+        Studio section
+    </div>
+</section>
 
-<div class="news"></div>
+<section id="news-id" class="news">
+    <div class="news__content view-port">
+        News section
+    </div>
+</section>
 
-<div class="footer"></div>
+<footer id="contact-id" class="footer">
+    <div class="footer__content view-port">
+        Footer section
+    </div>
+</footer>
 
 </div>
 

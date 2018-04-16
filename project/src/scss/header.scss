@@ -95,6 +95,26 @@ $menu-box-contact-text-color: $global-white;
     }
 
     &__menu-item {
+        cursor: pointer;
+        transition: 0.125s linear;
+        &:hover {
+            background-color: lighten($menu-box-menu-bg, 5%);
+        }
+        & > a {
+            display: block;
+            width: 125px;
+            height: 120px;
+            color: $manu-box-menu-item-text-color;
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 120px;
+        }
+    }
+
+    &__menu-item--sub {
+        @extend .header__menu-item;
+        display: block;
         width: 125px;
         height: 120px;
         color: $manu-box-menu-item-text-color;
@@ -102,15 +122,6 @@ $menu-box-contact-text-color: $global-white;
         text-align: center;
         text-transform: uppercase;
         line-height: 120px;
-        cursor: pointer;
-        transition: 0.125s linear;
-        &:hover {
-            background-color: lighten($menu-box-menu-bg, 5%);
-        }
-    }
-
-    &__menu-item--sub {
-        @extend .header__menu-item;
         position: relative;
         margin-top: -3px;
         border-top: 3px solid $global-platinum;
