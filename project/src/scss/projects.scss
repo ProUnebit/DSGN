@@ -3,6 +3,7 @@
 
 .projects {
 // |---PARAMS-LOC---|
+$content-bg: $global-pastel-orange;
 $menu-box-bg: $global-meat-brown;
 $menu-box-title-color: $global-white;
 $menu-box-nav-text-color: $global-white;
@@ -26,16 +27,12 @@ $product-single-bg: $global-white;
         display: grid;
         grid-template-columns: 300px 165px 270px 300px 465px;
         grid-template-rows: repeat(2, 250px) 215px 250px 300px;
-        // grid-template-areas:
-        // 'menu-box menu-box product-box product-box product-box'
-        // 'menu-box menu-box product-box product-box product-box'
-        // 'product-box product-box product-box product-box product-box'
-        // 'product-box product-box product-box product-box product-box'
-        // 'product-box product-box product-box product-box menu-box';
+        // background-color: lighten($content-bg, 20%);
+        background: url('img/wood_bg2.jpg') no-repeat;
+        background-size: cover;
     }
 
     &__menu-box {
-        // grid-area: menu-box;
         position: relative;
         grid-column: 1 / 3;
         grid-row: 1 / 3;
@@ -46,18 +43,56 @@ $product-single-bg: $global-white;
 
     &__nav-list {
         @include clear-list;
+        display: inline-block;
+        margin-left: 150px;
+        margin-top: 170px;
+        color: $menu-box-nav-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 13px;
+        text-align: left;
+        line-height: 16px;
+        text-transform: uppercase;
     }
 
     &__nav-item {
-
+        cursor: pointer;
+        &:hover {
+            color: darken($menu-box-nav-text-color, 15%);
+        }
+        &:active {
+            color: gold;
+        }
     }
 
-    // &__product-box {
-    //     // grid-area: product-box;
-    //     // grid-column: 3 / -1;
-    //     // grid-row: 1 / 3;
-    //     background-color: darkred;
-    // }
+    &__nav-item--active {
+        position: relative;
+        color: $menu-box-nav-text-active-color;
+        font-weight: bold;
+        &::before {
+            position: absolute;
+            content: "\f061";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 14px;
+            top: -0.6px;
+            left: -25px;
+            color: $menu-box-nav-text-color;
+            cursor: default;
+        }
+        &:hover {
+            color: $menu-box-nav-text-active-color;
+        }
+    }
+
+    &__title {
+        margin-top: 60px;
+        margin-left: 210px;
+        color: $menu-box-title-color;
+        font-family: 'Roboto Condensed';
+        font-size: 48px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
 
     &__product-miniature {
 
@@ -112,7 +147,6 @@ $product-single-bg: $global-white;
     }
 
     &__timeline-box {
-        // grid-area: timeline-box;
         position: relative;
         grid-column: 5 / 6;
         grid-row: 5 / 6;
@@ -121,12 +155,41 @@ $product-single-bg: $global-white;
         background-repeat: no-repeat;
     }
 
+    &__timiline-title {
+        margin-top: 60px;
+        margin-left: 100px;
+        color: $timeline-box-title-color;
+        font-family: 'Roboto Condensed';
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
     &__timeline-list {
-        @include clear-list;
+        @extend .projects__nav-list;
+        margin-left: 100px;
+        margin-top: 10px;
+        color: $timeline-box-nav-text-color;
     }
 
     &__timeline-item {
+        cursor: pointer;
+        &:hover {
+            color: darken($timeline-box-nav-text-color, 15%);
+        }
+        &:active {
+            color: gold;
+        }
+    }
 
+    &__timeline-item--active {
+        @extend .projects__nav-item--active;
+        color: $timeline-box-nav-text-active-color;
+        &::before {
+            color: $timeline-box-nav-text-color;
+        }
+        &:hover {
+            color: $timeline-box-nav-text-active-color;
+        }
     }
 
     &__product-single {
