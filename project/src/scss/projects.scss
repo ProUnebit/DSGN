@@ -56,6 +56,7 @@ $product-single-bg: $global-white;
 
     &__nav-item {
         cursor: pointer;
+        transition: .125s linear;
         &:hover {
             color: darken($menu-box-nav-text-color, 15%);
         }
@@ -95,7 +96,11 @@ $product-single-bg: $global-white;
     }
 
     &__product-miniature {
-
+        animation: miniature-go .75s linear;
+        @keyframes miniature-go {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
     }
 
     &__product-miniature--1 {
@@ -172,7 +177,7 @@ $product-single-bg: $global-white;
     }
 
     &__timeline-item {
-        cursor: pointer;
+        @extend .projects__nav-item;
         &:hover {
             color: darken($timeline-box-nav-text-color, 15%);
         }
