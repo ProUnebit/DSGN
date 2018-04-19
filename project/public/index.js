@@ -148,8 +148,6 @@ function timelineActive(selector) {
     selector.classList.add('projects__timeline-item--active');
 }
 
-document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
-
 timelineAll.addEventListener('click', () => {
     projectsTimelineAll = [];
     timelineSortAll(projectsTimelineAll);
@@ -298,5 +296,6 @@ typeStudioLab.addEventListener('click', () => {
     typeSort(projectsStudioLab, 'studio lab');
     typeActive(typeStudioLab);
 });
-
+// auto load obj
+document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
 // Studio
