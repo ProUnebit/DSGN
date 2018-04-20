@@ -72,7 +72,7 @@ function timelineSortAll(projectsArr) {
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
         let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.visibility = "visible";
+        varSelector3.style.display = "";
     }
     for ( var i = 0; i < projectsAllColl.length; i++ ) {
         if (typePoint) {
@@ -102,7 +102,7 @@ function timelineSortAll(projectsArr) {
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.visibility = "hidden";
+        varSelector2.style.display = "none";
     }
 }
 
@@ -112,7 +112,7 @@ function timelineSort(projectsArr, yearArg) {
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
         let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.visibility = "visible";
+        varSelector3.style.display = "";
     }
     for ( let i = 0; i < projectsAllColl.length; i++ ) {
         if (typePoint) {
@@ -136,7 +136,7 @@ function timelineSort(projectsArr, yearArg) {
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.visibility = "hidden";
+        varSelector2.style.display = "none";
     }
 }
 
@@ -191,7 +191,7 @@ function typeSortAll(projectsArr) {
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
         let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.visibility = "visible";
+        varSelector3.style.display = "";
     }
     for ( var i = 0; i < projectsAllColl.length; i++ ) {
         if (yearPoint) {
@@ -221,7 +221,7 @@ function typeSortAll(projectsArr) {
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.visibility = "hidden";
+        varSelector2.style.display = "none";
     }
 }
 
@@ -231,7 +231,7 @@ function typeSort(projectsArr, typeArg) {
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
         let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.visibility = "visible";
+        varSelector3.style.display = "";
     }
     for ( let i = 0; i < projectsAllColl.length; i++ ) {
         if (yearPoint) {
@@ -255,7 +255,7 @@ function typeSort(projectsArr, typeArg) {
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.visibility = "hidden";
+        varSelector2.style.display = "none";
     }
 }
 
