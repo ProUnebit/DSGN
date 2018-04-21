@@ -13,6 +13,9 @@ const typeHouse = document.querySelector('.projects__nav-item--house');
 const typeCommercial = document.querySelector('.projects__nav-item--commercial');
 const typePersonal = document.querySelector('.projects__nav-item--personal');
 const typeStudioLab = document.querySelector('.projects__nav-item--studio-lab');
+const btnViewProject = document.querySelectorAll('.projects__product-view');
+const singleProductView = document.querySelector('.projects__product-single');
+const btnCloseSingleProduct = document.querySelector('.projects__times-pic');
 
 // BLOCKS
 // Header
@@ -296,6 +299,22 @@ typeStudioLab.addEventListener('click', () => {
     typeSort(projectsStudioLab, 'studio lab');
     typeActive(typeStudioLab);
 });
-// auto load obj
+// auto load obj.
 document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
+// single product
+// open
+Array.from(btnViewProject).forEach( el => {
+    el.addEventListener('click', () => {
+        singleProductView.style.animation = 'p-s-open-go .4s ease-in';
+        singleProductView.style.opacity = '1';
+        singleProductView.style.display = 'block';
+    })
+});
+// close
+btnCloseSingleProduct.addEventListener('click', () => {
+    singleProductView.style.animation = 'p-s-close-go .3s ease-in-out';
+    singleProductView.style.opacity = '0';
+    setTimeout(() => { singleProductView.style.display = ''; }, 350)
+});
+
 // Studio

@@ -20,6 +20,7 @@ $timeline-box-nav-text-color: $global-white;
 $timeline-box-nav-text-active-color: $global-taupe;
 $timeline-box-nav-icon-color: $global-white;
 $product-single-bg: $global-white;
+$product-single-close-btn-color: $global-taupe;
 
 // |---STYLES---|
     &__content {
@@ -27,9 +28,9 @@ $product-single-bg: $global-white;
         display: grid;
         grid-template-columns: 300px 165px 270px 300px 465px;
         grid-template-rows: repeat(2, 250px) 215px 250px 300px;
-        // background-color: lighten($content-bg, 20%);
-        background: url('img/wood_bg2.jpg') no-repeat;
-        background-size: cover;
+        // background: url('img/wood_bg1.jpg') no-repeat;
+        // background-size: cover;
+        background-color: rgba(234, 235, 227, 0.3);
     }
 
     &__menu-box {
@@ -405,9 +406,94 @@ $product-single-bg: $global-white;
 
     &__product-single {
         display: none;
-        z-index: 5;
+        z-index: 9;
         grid-column: 1 / -1;
         grid-row: 1 / -1;
         background-color: $product-single-bg;
+        overflow: hidden;
+        @keyframes p-s-open-go {
+            from {opacity: 0; transform: translateX(150px)}
+            15% {filter:blur(25px)}
+            to {opacity: 1; filter: none; transform: translateX(0)}
+        }
+        @keyframes p-s-close-go {
+            from {opacity: 1; transform: scaleY(1)}
+            80% {opacity: 0}
+            to {transform: scaleY(0.00001)}
+        }
+    }
+
+    &__close-view-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 125px;
+        height: 120px;
+        border: 2px solid $product-single-close-btn-color;
+        transition: 0.125s linear;
+        &:hover {
+            background-color: lighten($global-platinum, 5%);
+        }
+    }
+
+    &__times-pic {
+        width: 28.5px;
+        height: 32.2px;
+        cursor: pointer;
+        &:hover {
+            filter: drop-shadow(1px 2px 2px $global-gray);
+        }
+        &:active {
+            width: 28.5px * 1.2;
+            height: 32.2px * 1.2;
+        }
+    }
+
+    &__product-single-content {
+
+    }
+
+    &__product-single-text-box {
+
+    }
+
+    &__product-info-more {
+
+    }
+
+    &_product-single-slider-another-imgs {
+
+    }
+
+    &__product-single-move-button {
+
+    }
+
+    &__product-single-move-button-left {
+
+    }
+
+    &__product-single-move-button-right {
+
+    }
+
+    &__product-single-another-img {
+
+    }
+
+    &__soc-net-icons {
+
+    }
+
+    &__soc-net-icon {
+
+    }
+
+    &__product-single-slider-main-img {
+
+    }
+
+    &__product-single-main-img-output {
+
     }
 }
