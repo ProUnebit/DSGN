@@ -301,6 +301,8 @@ typeStudioLab.addEventListener('click', () => {
 });
 // auto load obj.
 document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
+// likes
+
 // single product
 // open
 Array.from(btnViewProject).forEach( el => {

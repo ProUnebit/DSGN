@@ -21,6 +21,7 @@ $timeline-box-nav-text-active-color: $global-taupe;
 $timeline-box-nav-icon-color: $global-white;
 $product-single-bg: $global-white;
 $product-single-close-btn-color: $global-taupe;
+$product-single-soc-icons-color: $global-taupe;
 
 // |---STYLES---|
     &__content {
@@ -406,6 +407,7 @@ $product-single-close-btn-color: $global-taupe;
 
     &__product-single {
         display: none;
+        position: relative;
         z-index: 9;
         grid-column: 1 / -1;
         grid-row: 1 / -1;
@@ -424,15 +426,18 @@ $product-single-close-btn-color: $global-taupe;
     }
 
     &__close-view-button {
+        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
+        top: 70px;
+        right: 170px;
         width: 125px;
         height: 120px;
         border: 2px solid $product-single-close-btn-color;
         transition: 0.125s linear;
         &:hover {
-            background-color: lighten($global-platinum, 5%);
+            background-color: lighten($global-meat-brown, 5%);
         }
     }
 
@@ -441,7 +446,7 @@ $product-single-close-btn-color: $global-taupe;
         height: 32.2px;
         cursor: pointer;
         &:hover {
-            filter: drop-shadow(1px 2px 2px $global-gray);
+            filter: drop-shadow(1px 2px 1.5px darkred);
         }
         &:active {
             width: 28.5px * 1.2;
@@ -450,50 +455,111 @@ $product-single-close-btn-color: $global-taupe;
     }
 
     &__product-single-content {
-
+        margin-top: 235px;
+        margin-left: 235px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        max-height: 1000px;
+        max-width: 600px;
     }
 
     &__product-single-text-box {
-
+        width: 545px;
+        margin-top: 225px;
+        .projects__product-info {
+            margin-bottom: 40px;
+        }
+        .projects__product-name {
+            font-size: 30px;
+        }
+        .projects__product-property {
+            font-size: 14px;
+        }
     }
 
     &__product-info-more {
-
+        font-family: 'Roboto Condensed';
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+        line-height: 14px;
+        margin-bottom: 14px;
     }
 
-    &_product-single-slider-another-imgs {
-
+    &__product-single-slider-another-imgs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 85px;
     }
 
     &__product-single-move-button {
-
+        width: 25px;
+        height: 60px;
+        cursor: pointer;
+        transition: .1s linear;
+        &:hover {
+            filter: drop-shadow(0px 3px 1px $global-taupe);
+        }
+        &:active {
+            height: 50px;
+        }
     }
 
     &__product-single-move-button-left {
-
+        width: inherit;
+        height: inherit;
     }
 
     &__product-single-move-button-right {
-
+        @extend .projects__product-single-move-button-left;
     }
 
     &__product-single-another-img {
-
+        width: 100px;
+        height: 100px;
+        margin-left: 30px;
+        border: 2px solid transparent;
+        transition: .115s linear;
+        cursor: pointer;
+        &:last-of-type {
+            margin-right: 30px;
+        }
+        &:hover {
+            border: 2px solid $global-meat-brown;
+        }
     }
 
     &__soc-net-icons {
-
+        cursor: default;
     }
 
     &__soc-net-icon {
-
+        margin-right: 30px;
+        color: $product-single-soc-icons-color;
+        font-size: 24px;
+        cursor: pointer;
+        transition: .15s linear;
+        &:last-of-type {
+            margin-right: 0;
+        }
+        &:hover {
+            color: $global-pearl-aqua;
+        }
     }
 
     &__product-single-slider-main-img {
-
+        // border: 2px solid violet;
+        z-index: -1;
+        margin-left: -45px;
     }
 
     &__product-single-main-img-output {
-
+        // border: 2px solid darkviolet;
+        max-width: 611px;
+        max-height: 815px;
     }
 }
