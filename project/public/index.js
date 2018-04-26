@@ -347,6 +347,7 @@ Array.from(btnViewProject).forEach( el => {
             document.singleProductMainPic.src = 'img/project_single_fondue.jpg';
             document.ingleProductAnotherPic_1.src = 'img/project_single_fondue-1.jpg';
             document.ingleProductAnotherPic_2.src = 'img/project_single_fondue-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_fondue.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[0].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[0].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[0].typology;
@@ -355,9 +356,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[1].name) {
 
-            document.singleProductMainPic.src = 'img/project_louis.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_louis.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_louis.jpg';
+            document.singleProductMainPic.src = 'img/project_single_louis.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_louis-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_louis-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_louis.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[1].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[1].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[1].typology;
@@ -366,9 +368,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[2].name){
 
-            document.singleProductMainPic.src = 'img/project_p22.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_p22.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_fondue.jpg';
+            document.singleProductMainPic.src = 'img/project_single_p22.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_p22-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_p22-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_p22.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[2].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[2].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[2].typology;
@@ -377,9 +380,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[3].name){
 
-            document.singleProductMainPic.src = 'img/project_sesann.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_sesann.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_sesann.jpg';
+            document.singleProductMainPic.src = 'img/project_single_sesann.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_sesann-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_sesann-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_sesann.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[3].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[3].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[3].typology;
@@ -388,9 +392,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[4].name){
 
-            document.singleProductMainPic.src = 'img/project_alessi.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_alessi.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_alessi.jpg';
+            document.singleProductMainPic.src = 'img/project_single_alessi.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_alessi-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_alessi-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_alessi.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[4].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[4].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[4].typology;
@@ -399,9 +404,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[5].name){
 
-            document.singleProductMainPic.src = 'img/project_potter.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_potter.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_potter.jpg';
+            document.singleProductMainPic.src = 'img/project_single_potter.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_potter-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_potter-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_potter.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[5].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[5].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[5].typology;
@@ -410,9 +416,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[6].name){
 
-            document.singleProductMainPic.src = 'img/project_tabano.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_tabano.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_tabano.jpg';
+            document.singleProductMainPic.src = 'img/project_single_tabano.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_tabano-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_tabano-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_tabano.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[6].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[6].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[6].typology;
@@ -421,9 +428,10 @@ Array.from(btnViewProject).forEach( el => {
 
         } else if (namePoint == projectsAllColl[7].name){
 
-            document.singleProductMainPic.src = 'img/project_fiji.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_fiji.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_fiji.jpg';
+            document.singleProductMainPic.src = 'img/project_single_fiji.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_fiji-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_fiji-2.jpg';
+            document.ingleProductAnotherPic_3.src = 'img/project_single_fiji.jpg';
             singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[7].name;
             singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[7].designer;
             singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[7].typology;
@@ -435,7 +443,11 @@ Array.from(btnViewProject).forEach( el => {
 // choise pic
 Array.from(singleProductMiniImages).forEach( el => {
     el.addEventListener('click', () => {
+        for ( let i = 0; i < singleProductMiniImages.length; i++) {
+            singleProductMiniImages[i].style.border = '';
+        }
         document.singleProductMainPic.src = el.src;
+        el.style.border = '2px solid rgba(235, 178, 64, 1)';
     })
 });
 // close s.p.
@@ -443,6 +455,9 @@ btnCloseSingleProduct.addEventListener('click', () => {
     singleProductView.style.animation = 'p-s-close-go .3s ease-in-out';
     singleProductView.style.opacity = '0';
     setTimeout(() => { singleProductView.style.display = ''; }, 350)
+    for ( let i = 0; i < singleProductMiniImages.length; i++) {
+        singleProductMiniImages[i].style.border = '';
+    }
 });
 
 // Studio

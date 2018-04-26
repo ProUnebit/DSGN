@@ -461,7 +461,7 @@ $product-single-soc-icons-color: $global-taupe;
         height: 32.2px;
         cursor: pointer;
         &:hover {
-            filter: drop-shadow(1px 2px 1.5px darkred);
+            filter: drop-shadow(1px 2px 1px darkred);
         }
         &:active {
             width: 28.5px * 1.2;
@@ -501,6 +501,7 @@ $product-single-soc-icons-color: $global-taupe;
         text-align: left;
         line-height: 14px;
         margin-bottom: 14px;
+        background-image: linear-gradient(147.35deg, transparent 50%, $global-white 100%);
     }
 
     &__product-single-slider-another-imgs {
@@ -511,40 +512,18 @@ $product-single-soc-icons-color: $global-taupe;
         margin-bottom: 85px;
     }
 
-    &__product-single-move-button {
-        width: 25px;
-        height: 60px;
-        cursor: pointer;
-        transition: .1s linear;
-        &:hover {
-            filter: drop-shadow(0px 3px 1px $global-taupe);
-        }
-        &:active {
-            height: 50px;
-        }
-    }
-
-    &__product-single-move-button-left {
-        width: inherit;
-        height: inherit;
-    }
-
-    &__product-single-move-button-right {
-        @extend .projects__product-single-move-button-left;
-    }
-
     &__product-single-another-img {
         width: 100px;
         height: 100px;
-        margin-left: 30px;
+        margin-right: 30px;
         border: 2px solid transparent;
         transition: .115s linear;
         cursor: pointer;
         &:last-of-type {
-            margin-right: 30px;
+            margin-right: 0;
         }
         &:hover {
-            border: 2px solid $global-meat-brown;
+            border: 2px solid $global-pearl-aqua;
         }
     }
 
@@ -567,13 +546,11 @@ $product-single-soc-icons-color: $global-taupe;
     }
 
     &__product-single-slider-main-img {
-        // border: 2px solid violet;
         z-index: -1;
         margin-left: -45px;
     }
 
     &__product-single-main-img-output {
-        // border: 2px solid darkviolet;
         max-width: 611px;
         max-height: 815px;
     }
