@@ -2,6 +2,7 @@
 const btnOpenMenu = document.querySelector('.header__burger-pic');
 const btnCloseMenu = document.querySelector('.header__times-pic');
 const headerMenu = document.querySelector('.header__menu');
+const productMiniature = document.querySelector('.projects__product-miniature');
 const timelineAll = document.querySelector('.projects__timeline-item--all');
 const timeline_2017 = document.querySelector('.projects__timeline-item--2017');
 const timeline_2015 = document.querySelector('.projects__timeline-item--2015');
@@ -15,7 +16,9 @@ const typePersonal = document.querySelector('.projects__nav-item--personal');
 const typeStudioLab = document.querySelector('.projects__nav-item--studio-lab');
 const btnViewProject = document.querySelectorAll('.projects__product-view');
 const singleProductView = document.querySelector('.projects__product-single');
+const singleProductMiniImages= document.querySelectorAll('.projects__product-single-another-img');
 const btnCloseSingleProduct = document.querySelector('.projects__times-pic');
+const projectsLikes = document.querySelectorAll('.projects__product-likes');
 
 // BLOCKS
 // Header
@@ -40,14 +43,14 @@ btnCloseMenu.addEventListener('click', () => {
 
 // Projects
 let projectsAllColl = [
-    {name: 'fondue', designer: 'francesco dompieri', typology: 'suspension lamp', client: 'david design', type: 'personal', year: '2015', img: 'img/project_fondue.jpg'},
-    {name: 'louis xx', designer: 'philippe starck', typology: 'chairs', client: 'vitra', type: 'commercial', year: '2012', img: 'img/project_louis.jpg'},
-    {name: '395-396 p22', designer: 'patrick norguet', typology: 'arimchairs', client: 'cassina', type: 'commercial', year: '2013', img: 'img/project_p22.jpg'},
-    {name: 'sesann', designer: 'gianfranco frattini', typology: 'arimchairs', client: 'cassina', type: 'commercial', year: '2010', img: 'img/project_sesann.jpg'},
-    {name: 'alessi' , designer: 'piero lissoni', typology: 'decor', client: 'alessi', type: 'studio lab', year: '2017', img: 'img/project_alessi.jpg'},
-    {name: 'potter', designer: 'francesco dompieri', typology: 'accessory', client: 'vitra', type: 'commercial', year: '2010', img: 'img/project_potter.jpg'},
-    {name: 'tabano', designer: 'patrica urquiola', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_tabano.jpg'},
-    {name: 'fiji', designer: 'cuno frommherz', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_fiji.jpg'}
+    {name: 'fondue', designer: 'francesco dompieri', typology: 'suspension lamp', client: 'david design', type: 'personal', year: '2015', img: 'img/project_fondue.jpg', like: false},
+    {name: 'louis xx', designer: 'philippe starck', typology: 'chairs', client: 'vitra', type: 'commercial', year: '2012', img: 'img/project_louis.jpg', like: false},
+    {name: '395-396 p22', designer: 'patrick norguet', typology: 'arimchairs', client: 'cassina', type: 'commercial', year: '2013', img: 'img/project_p22.jpg', like: false},
+    {name: 'sesann', designer: 'gianfranco frattini', typology: 'arimchairs', client: 'cassina', type: 'commercial', year: '2010', img: 'img/project_sesann.jpg', like: false},
+    {name: 'alessi' , designer: 'piero lissoni', typology: 'decor', client: 'alessi', type: 'studio lab', year: '2017', img: 'img/project_alessi.jpg', like: false},
+    {name: 'potter', designer: 'francesco dompieri', typology: 'accessory', client: 'vitra', type: 'commercial', year: '2010', img: 'img/project_potter.jpg', like: false},
+    {name: 'tabano', designer: 'patrica urquiola', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_tabano.jpg', like: false},
+    {name: 'fiji', designer: 'cuno frommherz', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_fiji.jpg', like: false}
 ];
 
 let projectsAll = [];
@@ -107,6 +110,9 @@ function timelineSortAll(projectsArr) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
         varSelector2.style.display = "none";
     }
+    for ( let l = 0; l < projectsLikes.length; l++ ) {
+        projectsLikes[l].classList.remove('likes-active');
+    }
 }
 
 function timelineSort(projectsArr, yearArg) {
@@ -140,6 +146,9 @@ function timelineSort(projectsArr, yearArg) {
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
         varSelector2.style.display = "none";
+    }
+    for ( let l = 0; l < projectsLikes.length; l++ ) {
+        projectsLikes[l].classList.remove('likes-active');
     }
 }
 
@@ -226,6 +235,9 @@ function typeSortAll(projectsArr) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
         varSelector2.style.display = "none";
     }
+    for ( let l = 0; l < projectsLikes.length; l++ ) {
+        projectsLikes[l].classList.remove('likes-active');
+    }
 }
 
 function typeSort(projectsArr, typeArg) {
@@ -259,6 +271,9 @@ function typeSort(projectsArr, typeArg) {
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
         let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
         varSelector2.style.display = "none";
+    }
+    for ( let l = 0; l < projectsLikes.length; l++ ) {
+        projectsLikes[l].classList.remove('likes-active');
     }
 }
 
@@ -302,17 +317,128 @@ typeStudioLab.addEventListener('click', () => {
 // auto load obj.
 document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
 // likes
-
+Array.from(projectsLikes).forEach( el => {
+    el.addEventListener('click', (e) => {
+        if (el.classList.contains('likes-active')) {
+            let likes = el.textContent;
+            let result = `+ ${Number(likes.substring(2)) - 1}`;
+            el.textContent = result;
+            el.classList.remove('likes-active');
+        } else {
+            let likes = el.textContent;
+            let result = `+ ${Number(likes.substring(2)) + 1}`;
+            el.textContent = result;
+            el.classList.add('likes-active');
+        }
+    })
+});
 // single product
-// open
+// open s.p.
 Array.from(btnViewProject).forEach( el => {
     el.addEventListener('click', () => {
         singleProductView.style.animation = 'p-s-open-go .4s ease-in';
         singleProductView.style.opacity = '1';
         singleProductView.style.display = 'block';
+
+        let namePoint = el.parentNode.querySelector('.projects__product-name').textContent;
+
+        if (namePoint == projectsAllColl[0].name) {
+
+            document.singleProductMainPic.src = 'img/project_single_fondue.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_single_fondue-1.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_fondue-2.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[0].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[0].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[0].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[0].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[0].year;
+
+        } else if (namePoint == projectsAllColl[1].name) {
+
+            document.singleProductMainPic.src = 'img/project_louis.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_louis.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_louis.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[1].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[1].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[1].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[1].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[1].year;
+
+        } else if (namePoint == projectsAllColl[2].name){
+
+            document.singleProductMainPic.src = 'img/project_p22.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_p22.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_single_fondue.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[2].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[2].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[2].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[2].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[2].year;
+
+        } else if (namePoint == projectsAllColl[3].name){
+
+            document.singleProductMainPic.src = 'img/project_sesann.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_sesann.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_sesann.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[3].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[3].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[3].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[3].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[3].year;
+
+        } else if (namePoint == projectsAllColl[4].name){
+
+            document.singleProductMainPic.src = 'img/project_alessi.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_alessi.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_alessi.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[4].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[4].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[4].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[4].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[4].year;
+
+        } else if (namePoint == projectsAllColl[5].name){
+
+            document.singleProductMainPic.src = 'img/project_potter.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_potter.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_potter.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[5].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[5].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[5].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[5].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[5].year;
+
+        } else if (namePoint == projectsAllColl[6].name){
+
+            document.singleProductMainPic.src = 'img/project_tabano.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_tabano.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_tabano.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[6].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[6].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[6].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[6].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[6].year;
+
+        } else if (namePoint == projectsAllColl[7].name){
+
+            document.singleProductMainPic.src = 'img/project_fiji.jpg';
+            document.ingleProductAnotherPic_1.src = 'img/project_fiji.jpg';
+            document.ingleProductAnotherPic_2.src = 'img/project_fiji.jpg';
+            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[7].name;
+            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[7].designer;
+            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[7].typology;
+            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[7].client;
+            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[7].year;
+        }
     })
 });
-// close
+// choise pic
+Array.from(singleProductMiniImages).forEach( el => {
+    el.addEventListener('click', () => {
+        document.singleProductMainPic.src = el.src;
+    })
+});
+// close s.p.
 btnCloseSingleProduct.addEventListener('click', () => {
     singleProductView.style.animation = 'p-s-close-go .3s ease-in-out';
     singleProductView.style.opacity = '0';

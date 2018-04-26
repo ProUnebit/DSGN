@@ -184,8 +184,23 @@ $product-single-soc-icons-color: $global-taupe;
             cursor: pointer;
         }
         &:hover::before {
-            font-weight: 900;
             color: darken($product-miniature-like-value-color, 10%);
+        }
+    }
+
+    .likes-active {
+        font-weight: bold;
+        transition: .15s linear;
+    }
+
+    .likes-active::before {
+        font-weight: 900;
+        color: darken($product-miniature-like-value-color, 10%);
+        animation: like-actively-go .35s linear;
+        @keyframes like-actively-go {
+            from {opacity: 0; transform: translateY(-10px)}
+            15% {filter:blur(5px)}
+            to {opacity: 1; filter: none; transform: translateY(0)}
         }
     }
 
