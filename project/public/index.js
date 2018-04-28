@@ -498,11 +498,9 @@ btnCloseCvView.addEventListener('click', () => {
 Array.from(newsReadMore).forEach( el => {
     el.addEventListener('mouseover', () => {
         el.parentNode.style.background = ' linear-gradient(180deg, rgba(212, 237, 191, 0.85) 5%, transparent 25%)';
-        el.parentNode.children[3].style.filter = 'blur(2px)';
     })
     el.addEventListener('mouseout', () => {
         el.parentNode.style.background = '';
-        el.parentNode.children[3].style.filter = 'none';
     })
 });
 
