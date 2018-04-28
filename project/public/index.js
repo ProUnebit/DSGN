@@ -24,6 +24,7 @@ const studioPhotoChoice = document.querySelector('.studio__photo-choice');
 const cvOpen = document.querySelectorAll('.studio__cv');
 const cvView = document.querySelector('.studio__cv-more');
 const btnCloseCvView = document.querySelector('.studio__close-cv-more-button');
+const newsReadMore = document.querySelectorAll('.news__article-read-more');
 
 // BLOCKS
 // Header
@@ -493,3 +494,16 @@ btnCloseCvView.addEventListener('click', () => {
 });
 
 // News
+// read more hover
+Array.from(newsReadMore).forEach( el => {
+    el.addEventListener('mouseover', () => {
+        el.parentNode.style.background = ' linear-gradient(180deg, rgba(212, 237, 191, 0.85) 5%, transparent 25%)';
+        el.parentNode.children[3].style.filter = 'blur(2px)';
+    })
+    el.addEventListener('mouseout', () => {
+        el.parentNode.style.background = '';
+        el.parentNode.children[3].style.filter = 'none';
+    })
+});
+
+// Footer

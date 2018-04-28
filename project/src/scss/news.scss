@@ -1,0 +1,113 @@
+@import "partials/params-g";
+@import "partials/mixins";
+
+.news {
+// |---PARAMS-LOC---|
+$content-bg: $global-cream;
+$news-box-bg: $global-tea-green;
+$news-box-title-color: $global-white;
+$article-title-color: $global-taupe;
+$article-date-color: $global-dim-gray;
+$article-text-color: $global-dim-gray;
+$article-btn-text-color: $global-inter-orange;
+
+// |---STYLES---|
+
+    &__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: 465px 1fr 170px;
+        grid-template-rows: 500px;
+        background-color: $content-bg;
+        overflow: hidden;
+    }
+
+    &__title-box {
+        background-color: $news-box-bg;
+        background-image: linear-gradient(132.85deg, transparent 50%, $global-white 50%, transparent 50.5%);
+        background-repeat: no-repeat;
+    }
+
+    &__title {
+        margin-top: 300px;
+        margin-left: 210px;
+        color: $news-box-title-color;
+        font-family: 'Roboto Condensed';
+        font-size: 48px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    &__articles {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__article {
+        width: 380px;
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__article-title {
+        min-height: 50px;
+        color: $article-title-color;
+        font-family: 'Roboto Condensed';
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        line-height: 24px;
+        text-transform: uppercase;
+        padding-top: 5px;
+    }
+
+    &__article-date {
+        color: $article-date-color;
+        font-family: 'Roboto Condensed';
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    &__article-img {
+        width: 380px;
+        height: 180px;
+    }
+
+    &__article-text-fragment {
+        min-height: 65px;
+        color: $article-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 12px;
+        text-align: justify;
+        word-spacing: 5px;
+        line-height: 14px;
+        margin-top: 20px;
+    }
+
+    &__article-read-more {
+        align-self: flex-end;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: $article-btn-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            text-decoration-line: underline;
+        }
+        &:active {
+            color: lighten($article-btn-text-color, 20%);
+        }
+    }
+}

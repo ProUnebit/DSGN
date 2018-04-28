@@ -2,8 +2,6 @@
 @import "partials/mixins";
 @import "partials/fonts";
 
-$main-bg-color: $global-cream;
-
 body {
     @include clear;
     position: relative;
@@ -13,10 +11,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    @include clear;
-}
-
-figure {
     @include clear;
 }
 
