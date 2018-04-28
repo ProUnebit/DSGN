@@ -3,7 +3,6 @@
 
 .projects {
 // |---PARAMS-LOC---|
-$content-bg: $global-pastel-orange;
 $menu-box-bg: $global-meat-brown;
 $menu-box-title-color: $global-white;
 $menu-box-nav-text-color: $global-white;
@@ -29,8 +28,6 @@ $product-single-soc-icons-color: $global-taupe;
         display: grid;
         grid-template-columns: 300px 165px 270px 300px 465px;
         grid-template-rows: repeat(2, 250px) 215px 250px 300px;
-        // background: url('img/wood_bg1.jpg') no-repeat;
-        // background-size: cover;
         background-color: rgba(234, 235, 227, 0.3);
     }
 
@@ -171,7 +168,9 @@ $product-single-soc-icons-color: $global-taupe;
         font-size: 11px;
         font-weight: 300;
         text-transform: uppercase;
-        cursor: default;
+        padding-top: 15px;
+        margin-top: -15px;
+        cursor: pointer;
         &::before {
             position: absolute;
             content: "\f004";
@@ -181,7 +180,6 @@ $product-single-soc-icons-color: $global-taupe;
             bottom: 18px;
             left: 0;
             color: lighten($product-miniature-icon-heart, 10%);
-            cursor: pointer;
         }
         &:hover::before {
             color: darken($product-miniature-like-value-color, 10%);

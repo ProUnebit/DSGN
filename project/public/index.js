@@ -19,6 +19,11 @@ const singleProductView = document.querySelector('.projects__product-single');
 const singleProductMiniImages= document.querySelectorAll('.projects__product-single-another-img');
 const btnCloseSingleProduct = document.querySelector('.projects__times-pic');
 const projectsLikes = document.querySelectorAll('.projects__product-likes');
+const studioPhoto = document.querySelector('.studio__photo');
+const studioPhotoChoice = document.querySelector('.studio__photo-choice');
+const cvOpen = document.querySelectorAll('.studio__cv');
+const cvView = document.querySelector('.studio__cv-more');
+const btnCloseCvView = document.querySelector('.studio__close-cv-more-button');
 
 // BLOCKS
 // Header
@@ -461,3 +466,30 @@ btnCloseSingleProduct.addEventListener('click', () => {
 });
 
 // Studio
+// photo choice
+function photoChoice(sel, numPic) {
+    sel.addEventListener('click', () => {
+        for ( var i = 0; i < studioPhotoChoice.children.length; i++) {
+            studioPhotoChoice.children[i].classList.remove('studio__photo-active');
+        }
+        studioPhoto.src = `img/studio_img${numPic+1}.jpg`;
+        sel.classList.add('studio__photo-active');
+    });
+}
+
+photoChoice(studioPhotoChoice.children[0], 0);
+photoChoice(studioPhotoChoice.children[1], 1);
+photoChoice(studioPhotoChoice.children[2], 2);
+photoChoice(studioPhotoChoice.children[3], 3);
+// cv view open
+Array.from(cvOpen).forEach( el => {
+    el.addEventListener('click', () => {
+        cvView.style.display = 'flex';
+    })
+});
+// cv view close
+btnCloseCvView.addEventListener('click', () => {
+    cvView.style.display = '';
+});
+
+// News
