@@ -1,4 +1,5 @@
 // The selectors
+const googleMap = document.getElementById('map');
 const btnOpenMenu = document.querySelector('.header__burger-pic');
 const btnCloseMenu = document.querySelector('.header__times-pic');
 const headerMenu = document.querySelector('.header__menu');
@@ -497,11 +498,39 @@ btnCloseCvView.addEventListener('click', () => {
 // read more hover
 Array.from(newsReadMore).forEach( el => {
     el.addEventListener('mouseover', () => {
-        el.parentNode.style.background = ' linear-gradient(180deg, rgba(212, 237, 191, 0.85) 5%, transparent 25%)';
+        el.parentNode.children[0].style.background = ' linear-gradient(65deg, rgba(212, 237, 191, 0.9) 35%, transparent 100%)';
     })
     el.addEventListener('mouseout', () => {
-        el.parentNode.style.background = '';
+        el.parentNode.children[0].style.background = '';
     })
 });
 
 // Footer
+// google map
+function initMap() {
+    let options = {
+        zoom: 12,
+        center: new google.maps.LatLng(33.79518714128755,-118.15709964257815),
+        mapTypeId: 'terrain'
+    };
+    let image = {
+    url: 'img/map_pin.svg',
+    scaledSize: new google.maps.Size(45, 60)
+    };
+    let map = new google.maps.Map(googleMap, options);
+    let marker = new google.maps.Marker({
+        map: map,
+        position: options.center,
+        icon: image,
+        animation: google.maps.Animation.BOUNCE
+    });
+    let infowindow = new google.maps.InfoWindow({
+        content:'<strong style="font-weight: 600; color: #7bcfc4">DSGN</strong><br>California, Long Beach<br>'
+    });
+    google.maps.event.addListener(marker, 'click', () => {
+        infowindow.open(map,marker);
+    });
+    infowindow.open(map,marker);
+};
+
+// Modal sub

@@ -1,0 +1,106 @@
+@import "partials/params-g";
+@import "partials/mixins";
+
+.footer {
+// |---PARAMS-LOC---|
+$content-bg: $global-cream;
+$contact-text-color: $global-taupe;
+$logo-desc-text-color: $global-rifle-green;
+$soc-net-icons-color: $global-pearl-aqua;
+$copyright-text-color: $global-dark-jungle-green;
+
+// |---STYLES---|
+    &__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 645px;
+        overflow: hidden;
+        background-color: $content-bg;
+        overflow: hidden;
+    }
+
+    &__map-box {
+        width: auto;
+        height: auto;
+        background: url('img/map_test-map.jpg') no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    &__map {
+        width: 750px;
+        height: 645px;
+        z-index: 5;
+    }
+
+    &__contact-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 150px 170px 0 115px;
+    }
+
+    &__address-mail-phone {
+        color: $contact-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 13px;
+        text-align: left;
+        line-height: 14px;
+        text-transform: uppercase;
+        p {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__logo-desc-icons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        width: 162px;
+        height: 207px;
+        margin-bottom: 5px;
+    }
+
+    &__logo-description {
+        width: 95px;
+        color: $logo-desc-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 18px;
+        text-align: left;
+        line-height: 18px;
+        text-transform: uppercase;
+        cursor: default;
+    }
+
+    &__soc-net-icons {
+        margin-top: 60px;
+        margin-left: 20px;
+        cursor: default;
+    }
+
+    &__soc-net-icon {
+        color: $soc-net-icons-color;
+        font-size: 24px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: .15s linear;
+        &:hover {
+            color: $global-pastel-orange;
+        }
+    }
+
+    &__copyright {
+        position: absolute;
+        left: 115px;
+        bottom: 50px;
+        color: $copyright-text-color;
+        font-family: 'Roboto Condensed';
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        letter-spacing: 0.2px;
+    }
+}

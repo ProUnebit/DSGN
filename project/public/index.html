@@ -405,13 +405,37 @@
 
 <footer id="contact" class="footer">
     <div class="footer__content view-port">
-        Footer section
+        <div class="footer__map-box">
+            <div id="map" class="footer__map"></div>
+        </div>
+        <div class="footer__contact-box">
+            <div class="footer__address-mail-phone">
+                <p>90802 California <br>Long beach <br>PO Box 68789 <br>300 East Ocean <br>Boulevard</p>
+                <p>+64 9 345 6758 <br>info@dsgn-studio.com</p>
+            </div>
+            <div class="footer__logo-desc-icons">
+                <img src="img/logo.png" class="footer__logo">
+                <p class="footer__logo-description">Associates Studio Design</p>
+                <div class="footer__soc-net-icons">
+                    <a href="https://www.facebook.com" class="footer__soc-net-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="footer__soc-net-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/" class="footer__soc-net-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://plus.google.com" class="footer__soc-net-icon"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            <div class="footer__copyright"><i class="far fa-copyright"></i> 2018 DSGN. All rights reserved - Designed by theuncreativelab.com</div>
+        </div>
     </div>
 </footer>
 
+<div class="modal-sub"></div>
+    <div class="modal-sub__content">
+        Modal (sub)
+    </div>
 </div>
 
 <script src="index.js"></script>
+<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwu3n6JCNtYWtXaGzbNIL6Zyc65WVoDSM&callback=initMap"></script>
 
 </body>
 </html>
