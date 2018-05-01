@@ -4,9 +4,11 @@
 .modal-sub {
 // |---PARAMS-LOC---|
 $modal-bg: fade-out($global-taupe, 0.45);
-$content-bg: $global-cream;
+$content-bg: lighten($global-cream, 2.5%);
 $header-bg: $global-pastel-orange;
 $header-title-color: $global-white;
+$validation-good: $global-pearl-aqua;
+$validation-bad: $global-inter-orange;
 $input-text-color: $global-gray;
 $submit-bg: $global-pastel-orange;
 $submit-text-color: $global-white;
@@ -67,7 +69,7 @@ $submit-text-color: $global-white;
         font-size: 22px;
         text-transform: uppercase;
         letter-spacing: 0.2px;
-        border-bottom: 3px double $global-white;
+        border-bottom: 3px double $header-title-color;
         cursor: default;
         margin-left: 20px;
     }
@@ -96,9 +98,26 @@ $submit-text-color: $global-white;
     }
 
     &__body {
+        position: relative;
         display: flex;
         justify-content: space-between;
         padding: 35px 15px;
+    }
+
+    &__validation-successfully {
+        display: none;
+        position: absolute;
+        top: 15px;
+        right: 135px;
+        color: darken($validation-good, 10%);
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+    &__validation-unsuccessfully {
+        @extend .modal-sub__validation-successfully;
+        color: $validation-bad;
+        right: 160px;
     }
 
     &__mail-img {
