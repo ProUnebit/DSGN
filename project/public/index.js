@@ -26,6 +26,11 @@ const cvOpen = document.querySelectorAll('.studio__cv');
 const cvView = document.querySelector('.studio__cv-more');
 const btnCloseCvView = document.querySelector('.studio__close-cv-more-button');
 const newsReadMore = document.querySelectorAll('.news__article-read-more');
+const btnSubOpen = document.querySelector('.header__menu-item--sub');
+const btnSubClose = document.querySelector('.modal-sub__times-pic');
+const modalWindow = document.querySelector('.modal-sub');
+const modalContent = document.querySelector('.modal-sub__content');
+const mailSubInput = document.querySelector('.modal-sub__input');
 
 // BLOCKS
 // Header
@@ -534,3 +539,33 @@ function initMap() {
 };
 
 // Modal sub
+// open
+btnSubOpen.addEventListener('click', () => {
+    modalWindow.style.animation = 'modal-open-go .65s ease-out';
+    modalWindow.style.display = 'block';
+    modalContent.style.animation = 'modal-content-go .35s linear';
+    modalContent.style.display = 'block';
+    headerMenu.style.display = '';
+});
+// close
+btnSubClose.addEventListener('click', () => {
+    modalWindow.style.animation = 'modal-close-go .30s ease-out';
+    modalContent.style.animation = 'modal-content-out-go .30s linear';
+    setTimeout( () => {
+        modalWindow.style.display = '';
+        modalContent.style.display = '';
+    }, 300);
+});
+// input
+function blurInput(e) {
+    this.value = (this.value == '') ? this.title : this.value;
+};
+
+function focusInput(e) {
+    this.value = (this.value == this.title) ? '' : this.value;
+};
+
+mailSubInput.addEventListener('blur', blurInput);
+mailSubInput.addEventListener('focus', focusInput);
+
+// Onload
