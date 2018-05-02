@@ -3,6 +3,10 @@ const googleMap = document.getElementById('map');
 const btnOpenMenu = document.querySelector('.header__burger-pic');
 const btnCloseMenu = document.querySelector('.header__times-pic');
 const headerMenu = document.querySelector('.header__menu');
+const linkToProjects = document.querySelector('[href^="#projects"]');
+const linkToStudio = document.querySelector('[href^="#studio"]');
+const linkToNews = document.querySelector('[href^="#news"]');
+const linkToContact = document.querySelector('[href^="#contact"]');
 const productMiniature = document.querySelector('.projects__product-miniature');
 const timelineAll = document.querySelector('.projects__timeline-item--all');
 const timeline_2017 = document.querySelector('.projects__timeline-item--2017');
@@ -333,8 +337,6 @@ typeStudioLab.addEventListener('click', () => {
     typeSort(projectsStudioLab, 'studio lab');
     typeActive(typeStudioLab);
 });
-// auto load obj.
-document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
 // likes
 Array.from(projectsLikes).forEach( el => {
     el.addEventListener('click', (e) => {
@@ -618,9 +620,35 @@ function toLiftUp() {
     } else clearTimeout(t);
     return false;
 }
-
+// call
 toLiftUpArrow.onclick = toLiftUp;
-
-
+// Scrolling to sections (#projects, #studio, #news, #contact)
+function ScrollTo(e) {
+    e.preventDefault();
+    const speed = 0.5;
+    let w = window.pageYOffset;
+    let hash = this.href.replace(/[^#]*(.*)/, '$1');
+    let t = document.querySelector(hash).getBoundingClientRect().top;
+    let start = null;
+    requestAnimationFrame(step);
+    function step(time) {
+        if (start === null) start = time;
+        let progress = time - start;
+        let r = (t < 0 ? Math.max(w - progress / speed, w + t) : Math.min(w + progress / speed, w + t));
+        window.scrollTo(0, r);
+        if (r !== w + t) {
+            requestAnimationFrame(step);
+        } else {
+            location.hash = hash;
+        }
+    }
+}
+// Listeners
+linkToProjects.addEventListener('click', ScrollTo, false);
+linkToStudio.addEventListener('click', ScrollTo, false);
+linkToNews.addEventListener('click', ScrollTo, false);
+linkToContact.addEventListener('click', ScrollTo, false);
 
 // Onload
+// auto load obj. (projectsAllColl)
+document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
