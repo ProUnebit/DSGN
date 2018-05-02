@@ -20,6 +20,22 @@ $copyright-text-color: $global-dark-jungle-green;
         overflow: hidden;
     }
 
+    &__to-lift-up {
+        position: absolute;
+        z-index: 9;
+        top: 235px;
+        right: 55px;
+        cursor: pointer;
+        i {
+            color: $global-pearl-aqua;
+            font-size: 38px;
+            font-weight: regular;
+            &:hover {
+                color: darken($global-pearl-aqua, 10%);
+            }
+        }
+    }
+
     &__map-box {
         width: auto;
         height: auto;

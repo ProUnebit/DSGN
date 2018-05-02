@@ -37,6 +37,7 @@ const mailSubValBad = document.querySelector('.modal-sub__validation-unsuccessfu
 const mailSubInputName = document.getElementById('input-name');
 const mailSubInputMail = document.getElementById('input-mail');
 const mailSubSubmit = document.querySelector('.modal-sub__submit');
+const toLiftUpArrow = document.querySelector('.footer__to-lift-up');
 
 // BLOCKS
 // Header
@@ -562,7 +563,7 @@ btnSubClose.addEventListener('click', () => {
         modalContent.style.display = '';
     }, 300);
 });
-// input
+// input auto value
 function blurInput(e) {
     this.value = (this.value == '') ? this.title : this.value;
 };
@@ -579,14 +580,14 @@ Array.from(mailSubInput).forEach( el => {
 let regExForMailSub = /\S+@\S+\.\S+/;
 // check #input-name & #input-mail
 function checkInput() {
-    if (mailSubInputName.value.trim() !== '' && regExForMailSub.test(mailSubInputMail.value)) {
+    if (mailSubInputName.value.trim() !== ''
+    &&
+    mailSubInputName.value !== mailSubInputName.title
+    &&
+    regExForMailSub.test(mailSubInputMail.value)) {
         mailSubSubmit.style.backgroundColor = '#7bcfc4';
         mailSubSubmit.style.cursor = 'pointer';
         mailSubSubmit.disabled = false;
-    } else if (mailSubInputName.value == mailSubInputName.title && regExForMailSub.test(mailSubInputMail.value)) {
-        mailSubSubmit.style.backgroundColor = '';
-        mailSubSubmit.style.cursor = 'not-allowed';
-        mailSubSubmit.disabled = true;
     } else {
         mailSubSubmit.style.backgroundColor = '';
         mailSubSubmit.style.cursor = 'not-allowed';
@@ -605,5 +606,21 @@ mailSubForm.addEventListener('submit', e => {
     mailSubInputName.value = mailSubInputName.title;
     mailSubInputMail.value = mailSubInputMail.title;
 });
+
+// Scroll Functionality
+// footer -> to lift up
+function toLiftUp() {
+    let t;
+    let top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+    if (top > 0) {
+        window.scrollBy(0, -50);
+        t = setTimeout('toLiftUp()', 10);
+    } else clearTimeout(t);
+    return false;
+}
+
+toLiftUpArrow.onclick = toLiftUp;
+
+
 
 // Onload
