@@ -437,12 +437,14 @@
             </div>
         </div>
         <div class="modal-sub__body">
-            <div class="modal-sub__validation-successfully">Thanks for a subscription!</div>
-            <div class="modal-sub__validation-unsuccessfully">Wrong input of mail</div>
             <img src="img/mail_icon.png" class="modal-sub__mail-img">
-            <form action="" name="mailSub" class="modal-sub__form">
-                <input type="text" class="modal-sub__input" name="mail" title="Your email..." value="Your email...">
-                <button type="submit" class="modal-sub__submit">Submit</button>
+            <form action="" class="modal-sub__form">
+                <div class="modal-sub__validation-successfully">Thanks for a subscription!</div>
+                <label for="input-name">Name</label>
+                <input type="text" id="input-name" class="modal-sub__input" title="Your name..." value="Your name..." oninput="checkInput()">
+                <label for="input-mail">Mail</label>
+                <input type="text" id="input-mail" class="modal-sub__input" title="Your email..." value="Your email..." oninput="checkInput()">
+                <button type="submit" class="modal-sub__submit" disabled>Submit</button>
             </form>
         </div>
     </div>

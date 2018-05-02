@@ -30,7 +30,13 @@ const btnSubOpen = document.querySelector('.header__menu-item--sub');
 const btnSubClose = document.querySelector('.modal-sub__times-pic');
 const modalWindow = document.querySelector('.modal-sub');
 const modalContent = document.querySelector('.modal-sub__content');
-const mailSubInput = document.querySelector('.modal-sub__input');
+const mailSubForm = document.querySelector('.modal-sub__form');
+const mailSubInput = document.querySelectorAll('.modal-sub__input');
+const mailSubValGood = document.querySelector('.modal-sub__validation-successfully');
+const mailSubValBad = document.querySelector('.modal-sub__validation-unsuccessfully');
+const mailSubInputName = document.getElementById('input-name');
+const mailSubInputMail = document.getElementById('input-mail');
+const mailSubSubmit = document.querySelector('.modal-sub__submit');
 
 // BLOCKS
 // Header
@@ -564,8 +570,40 @@ function blurInput(e) {
 function focusInput(e) {
     this.value = (this.value == this.title) ? '' : this.value;
 };
+Array.from(mailSubInput).forEach( el => {
+    el.addEventListener('blur', blurInput);
+    el.addEventListener('focus', focusInput);
+});
+// validation
+// regular expression for #input-mail (check)
+let regExForMailSub = /\S+@\S+\.\S+/;
+// check #input-name & #input-mail
+function checkInput() {
+    if (mailSubInputName.value.trim() !== '' && regExForMailSub.test(mailSubInputMail.value)) {
+        mailSubSubmit.style.backgroundColor = '#7bcfc4';
+        mailSubSubmit.style.cursor = 'pointer';
+        mailSubSubmit.disabled = false;
+    } else if (mailSubInputName.value == mailSubInputName.title && regExForMailSub.test(mailSubInputMail.value)) {
+        mailSubSubmit.style.backgroundColor = '';
+        mailSubSubmit.style.cursor = 'not-allowed';
+        mailSubSubmit.disabled = true;
+    } else {
+        mailSubSubmit.style.backgroundColor = '';
+        mailSubSubmit.style.cursor = 'not-allowed';
+        mailSubSubmit.disabled = true;
+    }
+}
+// submitted data and preventDefault method for sub-form, reload page -> to appoint default value
+mailSubForm.addEventListener('submit', e => {
+    e.preventDefault();
 
-mailSubInput.addEventListener('blur', blurInput);
-mailSubInput.addEventListener('focus', focusInput);
+    if (mailSubInputName.value == mailSubInputName.title && mailSubInputMail.value == mailSubInputMail.title) return;
+
+    mailSubValGood.innerHTML = `${mailSubInputName.value}, ${mailSubValGood.textContent} <i class="fas fa-spinner fa-spin"></i>`;
+    mailSubValGood.style.display = 'block';
+    setTimeout( () => { location.reload(); }, 3500);
+    mailSubInputName.value = mailSubInputName.title;
+    mailSubInputMail.value = mailSubInputMail.title;
+});
 
 // Onload

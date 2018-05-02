@@ -40,7 +40,7 @@ $submit-text-color: $global-white;
         left: calc(50% - 325px);
         background-color: $content-bg;
         width: 650px;
-        height: 330px;
+        height: 345px;
         overflow: hidden;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.15), 0 7px 20px 0 rgba(0,0,0,0.15);
         @keyframes modal-content-go {
@@ -98,41 +98,48 @@ $submit-text-color: $global-white;
     }
 
     &__body {
-        position: relative;
         display: flex;
         justify-content: space-between;
         padding: 35px 15px;
     }
 
-    &__validation-successfully {
-        display: none;
-        position: absolute;
-        top: 15px;
-        right: 135px;
-        color: darken($validation-good, 10%);
-        font-weight: bold;
-        letter-spacing: 0.5px;
-    }
-
-    &__validation-unsuccessfully {
-        @extend .modal-sub__validation-successfully;
-        color: $validation-bad;
-        right: 160px;
-    }
-
     &__mail-img {
         width: 180px;
         height: 180px;
+        padding-top: 15px;
     }
 
     &__form {
+        position: relative;
         display: flex;
         flex-direction: column;
         width: 300px;
         background-color: lighten($global-pastel-orange, 25%);
         border: 2px solid $global-pastel-orange;
-        padding: 25px;
+        padding: 15px 25px;
         margin: auto;
+        label {
+            color: darken($global-pastel-orange, 7%);
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            align-self: center;
+        }
+    }
+
+    &__validation-successfully {
+        display: none;
+        position: absolute;
+        top: -28px;
+        left: 0;
+        color: darken($validation-good, 10%);
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        animation: sub-val-good-go 1s linear;
+        @keyframes sub-val-good-go {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
     }
 
     &__input {
@@ -144,8 +151,11 @@ $submit-text-color: $global-white;
         border: 2px solid $global-pearl-aqua;
         padding-left: 5px;
         padding-right: 5px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         transition: .15s linear;
+        &:last-of-type {
+            margin-bottom: 20px;
+        }
         &:focus {
             outline: none;
             color: darken($input-text-color, 35%);
@@ -164,7 +174,7 @@ $submit-text-color: $global-white;
         text-transform: uppercase;
         background-color: $submit-bg;
         border: 0;
-        cursor: pointer;
+        cursor: not-allowed;
         transition: .115s linear;
         &:hover {
             background-color: lighten($submit-bg, 7%);
@@ -173,7 +183,6 @@ $submit-text-color: $global-white;
             outline: none;
         }
         &:active {
-            background-color: darken($submit-bg, 7%);
             transform: scale(0.965);
             padding: 0;
         }
