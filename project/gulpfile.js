@@ -16,7 +16,7 @@ const config = {
         generalPath: './public',
         masterCss: 'master.min.css'
   },
-    isDevelop: true
+    isDevelop: false
 };
 
 gulp.task('scss', () => {
