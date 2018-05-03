@@ -67,14 +67,79 @@ btnCloseMenu.addEventListener('click', () => {
 // Projects
 // projects collection
 let projectsAllColl = [
-    {name: 'fondue', designer: 'francesco dompieri', typology: 'suspension lamp', client: 'david design', type: 'personal', year: '2015', img: 'img/project_fondue.jpg', like: false},
-    {name: 'louis xx', designer: 'philippe starck', typology: 'chairs', client: 'vitra', type: 'commercial', year: '2012', img: 'img/project_louis.jpg', like: false},
-    {name: '395-396 p22', designer: 'patrick norguet', typology: 'arimchairs', client: 'cassina', type: 'commercial', year: '2013', img: 'img/project_p22.jpg', like: false},
-    {name: 'sesann', designer: 'gianfranco frattini', typology: 'arimchairs', client: 'cassina', type: 'commercial', year: '2010', img: 'img/project_sesann.jpg', like: false},
-    {name: 'alessi' , designer: 'piero lissoni', typology: 'decor', client: 'alessi', type: 'studio lab', year: '2017', img: 'img/project_alessi.jpg', like: false},
-    {name: 'potter', designer: 'francesco dompieri', typology: 'accessory', client: 'vitra', type: 'commercial', year: '2010', img: 'img/project_potter.jpg', like: false},
-    {name: 'tabano', designer: 'patrica urquiola', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_tabano.jpg', like: false},
-    {name: 'fiji', designer: 'cuno frommherz', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_fiji.jpg', like: false}
+    {
+        name: 'fondue',
+        designer: 'francesco dompieri',
+        typology: 'suspension lamp',
+        client: 'david design',
+        type: 'personal',
+        year: '2015',
+        img: 'img/project_fondue.jpg',
+        like: false
+    }, {
+        name: 'louis xx',
+        designer: 'philippe starck',
+        typology: 'chairs',
+        client: 'vitra',
+        type: 'commercial',
+        year: '2012',
+        img: 'img/project_louis.jpg',
+        like: false
+    }, {
+        name: '395-396 p22',
+        designer: 'patrick norguet',
+        typology: 'arimchairs',
+        client: 'cassina',
+        type: 'commercial',
+        year: '2013',
+        img: 'img/project_p22.jpg',
+        like: false
+    }, {
+        name: 'sesann',
+        designer: 'gianfranco frattini',
+        typology: 'arimchairs',
+        client: 'cassina',
+        type: 'commercial',
+        year: '2010',
+        img: 'img/project_sesann.jpg',
+        like: false
+    }, {
+        name: 'alessi',
+        designer: 'piero lissoni',
+        typology: 'decor',
+        client: 'alessi',
+        type: 'studio lab',
+        year: '2017',
+        img: 'img/project_alessi.jpg',
+        like: false
+    }, {
+        name: 'potter',
+        designer: 'francesco dompieri',
+        typology: 'accessory',
+        client: 'vitra',
+        type: 'commercial',
+        year: '2010',
+        img: 'img/project_potter.jpg',
+        like: false
+    }, {
+        name: 'tabano',
+        designer: 'patrica urquiola',
+        typology: 'arimchairs',
+        client: 'b&b italia',
+        type: 'house',
+        year: '2015',
+        img: 'img/project_tabano.jpg',
+        like: false
+    }, {
+        name: 'fiji',
+        designer: 'cuno frommherz',
+        typology: 'arimchairs',
+        client: 'b&b italia',
+        type: 'house',
+        year: '2015',
+        img: 'img/project_fiji.jpg',
+        like: false
+    }
 ];
 // result sort all
 let projectsAll = [];

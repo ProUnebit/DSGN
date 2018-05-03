@@ -1,6 +1,6 @@
-![Project Type](http://image.ibb.co/iwEsKx/html_frag.png)
+![Project Type](https://preview.ibb.co/eaJ4On/index_js_fragment.png)
 
-**index.html** fragment
+**index.js** fragment
 - - -
 ### Web-Marking
 **Project name:** *DSGN*
