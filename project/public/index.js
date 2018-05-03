@@ -43,7 +43,7 @@ const mailSubInputMail = document.getElementById('input-mail');
 const mailSubSubmit = document.querySelector('.modal-sub__submit');
 const toLiftUpArrow = document.querySelector('.footer__to-lift-up');
 
-// BLOCKS
+// B L O C K S
 // Header
 // global close menu function
 function closeMenu(e) {
@@ -65,6 +65,7 @@ btnCloseMenu.addEventListener('click', () => {
 });
 
 // Projects
+// projects collection
 let projectsAllColl = [
     {name: 'fondue', designer: 'francesco dompieri', typology: 'suspension lamp', client: 'david design', type: 'personal', year: '2015', img: 'img/project_fondue.jpg', like: false},
     {name: 'louis xx', designer: 'philippe starck', typology: 'chairs', client: 'vitra', type: 'commercial', year: '2012', img: 'img/project_louis.jpg', like: false},
@@ -75,33 +76,34 @@ let projectsAllColl = [
     {name: 'tabano', designer: 'patrica urquiola', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_tabano.jpg', like: false},
     {name: 'fiji', designer: 'cuno frommherz', typology: 'arimchairs', client: 'b&b italia', type: 'house', year: '2015', img: 'img/project_fiji.jpg', like: false}
 ];
-
+// result sort all
 let projectsAll = [];
-
+// result sort timeline
 let projectsTimelineAll = [];
 let projects_2017 = [];
 let projects_2015 = [];
 let projects_2013 = [];
 let projects_2012 = [];
 let projects_2010 = [];
-
+// result sort type
 let projectsTypeAll = [];
 let projectsHouse = [];
 let projectsCommercial = [];
 let projectsPersonal= [];
 let projectsStudioLab = [];
-
+// points for choice sorting
 let yearPoint;
 let typePoint;
 
-// timeline
+// timeline functions
+// all
 function timelineSortAll(projectsArr) {
 
     yearPoint = null;
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
-        let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.display = "";
+        let varSelector = document.querySelector(`.projects__product-miniature--${z+1}`);
+        varSelector.style.display = "";
     }
     for ( var i = 0; i < projectsAllColl.length; i++ ) {
         if (typePoint) {
@@ -130,21 +132,21 @@ function timelineSortAll(projectsArr) {
         varSelector.style.backgroundPosition = 'center';
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
-        let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.display = "none";
+        let varSelector = document.querySelector(`.projects__product-miniature--${y+1}`);
+        varSelector.style.display = "none";
     }
     for ( let l = 0; l < projectsLikes.length; l++ ) {
         projectsLikes[l].classList.remove('likes-active');
     }
 }
-
+// any one
 function timelineSort(projectsArr, yearArg) {
 
     yearPoint = yearArg;
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
-        let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.display = "";
+        let varSelector = document.querySelector(`.projects__product-miniature--${z+1}`);
+        varSelector.style.display = "";
     }
     for ( let i = 0; i < projectsAllColl.length; i++ ) {
         if (typePoint) {
@@ -167,14 +169,14 @@ function timelineSort(projectsArr, yearArg) {
         varSelector.style.backgroundPosition = 'center';
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
-        let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.display = "none";
+        let varSelector = document.querySelector(`.projects__product-miniature--${y+1}`);
+        varSelector.style.display = "none";
     }
     for ( let l = 0; l < projectsLikes.length; l++ ) {
         projectsLikes[l].classList.remove('likes-active');
     }
 }
-
+// activated sort-item
 function timelineActive(selector) {
     let pseudoArr = document.querySelectorAll('.projects__timeline-item');
     for ( let i = 0; i < pseudoArr.length; i++ ) {
@@ -182,7 +184,7 @@ function timelineActive(selector) {
     }
     selector.classList.add('projects__timeline-item--active');
 }
-
+// choice sort-item
 timelineAll.addEventListener('click', () => {
     projectsTimelineAll = [];
     timelineSortAll(projectsTimelineAll);
@@ -219,14 +221,15 @@ timeline_2010.addEventListener('click', () => {
     timelineActive(timeline_2010);
 });
 
-// type
+// type functions
+// all
 function typeSortAll(projectsArr) {
 
     typePoint = null;
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
-        let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.display = "";
+        let varSelector = document.querySelector(`.projects__product-miniature--${z+1}`);
+        varSelector.style.display = "";
     }
     for ( var i = 0; i < projectsAllColl.length; i++ ) {
         if (yearPoint) {
@@ -255,21 +258,21 @@ function typeSortAll(projectsArr) {
         varSelector.style.backgroundPosition = 'center';
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
-        let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.display = "none";
+        let varSelector = document.querySelector(`.projects__product-miniature--${y+1}`);
+        varSelector.style.display = "none";
     }
     for ( let l = 0; l < projectsLikes.length; l++ ) {
         projectsLikes[l].classList.remove('likes-active');
     }
 }
-
+// any one
 function typeSort(projectsArr, typeArg) {
 
     typePoint = typeArg;
 
     for ( let z = 0; z < projectsAllColl.length; z++ ) {
-        let varSelector3 = document.querySelector(`.projects__product-miniature--${z+1}`);
-        varSelector3.style.display = "";
+        let varSelector = document.querySelector(`.projects__product-miniature--${z+1}`);
+        varSelector.style.display = "";
     }
     for ( let i = 0; i < projectsAllColl.length; i++ ) {
         if (yearPoint) {
@@ -292,14 +295,14 @@ function typeSort(projectsArr, typeArg) {
         varSelector.style.backgroundPosition = 'center';
     }
     for ( let y = projectsArr.length; y < projectsAllColl.length; y++ ) {
-        let varSelector2 = document.querySelector(`.projects__product-miniature--${y+1}`);
-        varSelector2.style.display = "none";
+        let varSelector = document.querySelector(`.projects__product-miniature--${y+1}`);
+        varSelector.style.display = "none";
     }
     for ( let l = 0; l < projectsLikes.length; l++ ) {
         projectsLikes[l].classList.remove('likes-active');
     }
 }
-
+// activated sort-item
 function typeActive(selector) {
     let pseudoArr = document.querySelectorAll('.projects__nav-item');
     for ( let i = 0; i < pseudoArr.length; i++ ) {
@@ -307,7 +310,7 @@ function typeActive(selector) {
     }
     selector.classList.add('projects__nav-item--active');
 }
-
+// choice sort-item
 typeAll.addEventListener('click', () => {
     projectsTypeAll = [];
     typeSortAll(projectsTypeAll);
@@ -337,7 +340,7 @@ typeStudioLab.addEventListener('click', () => {
     typeSort(projectsStudioLab, 'studio lab');
     typeActive(typeStudioLab);
 });
-// likes
+// add "like"
 Array.from(projectsLikes).forEach( el => {
     el.addEventListener('click', (e) => {
         if (el.classList.contains('likes-active')) {
@@ -354,7 +357,7 @@ Array.from(projectsLikes).forEach( el => {
     })
 });
 // single product
-// open s.p.
+// open any one single project
 Array.from(btnViewProject).forEach( el => {
     el.addEventListener('click', () => {
         singleProductView.style.animation = 'p-s-open-go .4s ease-in';
@@ -363,105 +366,105 @@ Array.from(btnViewProject).forEach( el => {
 
         let namePoint = el.parentNode.querySelector('.projects__product-name').textContent;
 
-        if (namePoint == projectsAllColl[0].name) {
+        let name = singleProductView.querySelector('.projects__product-name');
+        let designer = singleProductView.querySelector('.projects__product-designer-value');
+        let typology = singleProductView.querySelector('.projects__product-typology-value');
+        let client = singleProductView.querySelector('.projects__product-client-value');
+        let year = singleProductView.querySelector('.projects__product-year-value');
 
-            document.singleProductMainPic.src = 'img/project_single_fondue.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_fondue-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_fondue-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_fondue.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[0].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[0].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[0].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[0].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[0].year;
-
-        } else if (namePoint == projectsAllColl[1].name) {
-
-            document.singleProductMainPic.src = 'img/project_single_louis.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_louis-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_louis-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_louis.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[1].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[1].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[1].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[1].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[1].year;
-
-        } else if (namePoint == projectsAllColl[2].name){
-
-            document.singleProductMainPic.src = 'img/project_single_p22.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_p22-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_p22-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_p22.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[2].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[2].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[2].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[2].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[2].year;
-
-        } else if (namePoint == projectsAllColl[3].name){
-
-            document.singleProductMainPic.src = 'img/project_single_sesann.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_sesann-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_sesann-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_sesann.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[3].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[3].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[3].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[3].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[3].year;
-
-        } else if (namePoint == projectsAllColl[4].name){
-
-            document.singleProductMainPic.src = 'img/project_single_alessi.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_alessi-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_alessi-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_alessi.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[4].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[4].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[4].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[4].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[4].year;
-
-        } else if (namePoint == projectsAllColl[5].name){
-
-            document.singleProductMainPic.src = 'img/project_single_potter.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_potter-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_potter-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_potter.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[5].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[5].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[5].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[5].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[5].year;
-
-        } else if (namePoint == projectsAllColl[6].name){
-
-            document.singleProductMainPic.src = 'img/project_single_tabano.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_tabano-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_tabano-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_tabano.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[6].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[6].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[6].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[6].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[6].year;
-
-        } else if (namePoint == projectsAllColl[7].name){
-
-            document.singleProductMainPic.src = 'img/project_single_fiji.jpg';
-            document.ingleProductAnotherPic_1.src = 'img/project_single_fiji-1.jpg';
-            document.ingleProductAnotherPic_2.src = 'img/project_single_fiji-2.jpg';
-            document.ingleProductAnotherPic_3.src = 'img/project_single_fiji.jpg';
-            singleProductView.querySelector('.projects__product-name').textContent = projectsAllColl[7].name;
-            singleProductView.querySelector('.projects__product-designer-value').textContent = projectsAllColl[7].designer;
-            singleProductView.querySelector('.projects__product-typology-value').textContent = projectsAllColl[7].typology;
-            singleProductView.querySelector('.projects__product-client-value').textContent = projectsAllColl[7].client;
-            singleProductView.querySelector('.projects__product-year-value').textContent = projectsAllColl[7].year;
+        switch (namePoint) {
+            case projectsAllColl[0].name:
+                document.singleProductMainPic.src = 'img/project_single_fondue.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_fondue-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_fondue-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_fondue.jpg';
+                name.textContent = projectsAllColl[0].name;
+                designer.textContent = projectsAllColl[0].designer;
+                typology.textContent = projectsAllColl[0].typology;
+                client.textContent = projectsAllColl[0].client;
+                year.textContent = projectsAllColl[0].year;
+            break;
+            case projectsAllColl[1].name:
+                document.singleProductMainPic.src = 'img/project_single_louis.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_louis-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_louis-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_louis.jpg';
+                name.textContent = projectsAllColl[1].name;
+                designer.textContent = projectsAllColl[1].designer;
+                typology.textContent = projectsAllColl[1].typology;
+                client.textContent = projectsAllColl[1].client;
+                year.textContent = projectsAllColl[1].year;
+            break;
+            case projectsAllColl[2].name:
+                document.singleProductMainPic.src = 'img/project_single_p22.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_p22-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_p22-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_p22.jpg';
+                name.textContent = projectsAllColl[2].name;
+                designer.textContent = projectsAllColl[2].designer;
+                typology.textContent = projectsAllColl[2].typology;
+                client.textContent = projectsAllColl[2].client;
+                year.textContent = projectsAllColl[2].year;
+            break;
+            case projectsAllColl[3].name:
+                document.singleProductMainPic.src = 'img/project_single_sesann.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_sesann-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_sesann-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_sesann.jpg';
+                name.textContent = projectsAllColl[3].name;
+                designer.textContent = projectsAllColl[3].designer;
+                typology.textContent = projectsAllColl[3].typology;
+                client.textContent = projectsAllColl[3].client;
+                year.textContent = projectsAllColl[3].year;
+            break;
+            case projectsAllColl[4].name:
+                document.singleProductMainPic.src = 'img/project_single_alessi.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_alessi-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_alessi-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_alessi.jpg';
+                name.textContent = projectsAllColl[4].name;
+                designer.textContent = projectsAllColl[4].designer;
+                typology.textContent = projectsAllColl[4].typology;
+                client.textContent = projectsAllColl[4].client;
+                year.textContent = projectsAllColl[4].year;
+            break;
+            case projectsAllColl[5].name:
+                document.singleProductMainPic.src = 'img/project_single_potter.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_potter-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_potter-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_potter.jpg';
+                name.textContent = projectsAllColl[5].name;
+                designer.textContent = projectsAllColl[5].designer;
+                typology.textContent = projectsAllColl[5].typology;
+                client.textContent = projectsAllColl[5].client;
+                year.textContent = projectsAllColl[5].year;
+            break;
+            case projectsAllColl[6].name:
+                document.singleProductMainPic.src = 'img/project_single_tabano.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_tabano-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_tabano-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_tabano.jpg';
+                name.textContent = projectsAllColl[6].name;
+                designer.textContent = projectsAllColl[6].designer;
+                typology.textContent = projectsAllColl[6].typology;
+                client.textContent = projectsAllColl[6].client;
+                year.textContent = projectsAllColl[6].year;
+            break;
+            case projectsAllColl[7].name:
+                document.singleProductMainPic.src = 'img/project_single_fiji.jpg';
+                document.ingleProductAnotherPic_1.src = 'img/project_single_fiji-1.jpg';
+                document.ingleProductAnotherPic_2.src = 'img/project_single_fiji-2.jpg';
+                document.ingleProductAnotherPic_3.src = 'img/project_single_fiji.jpg';
+                name.textContent = projectsAllColl[7].name;
+                designer.textContent = projectsAllColl[7].designer;
+                typology.textContent = projectsAllColl[7].typology;
+                client.textContent = projectsAllColl[7].client;
+                year.textContent = projectsAllColl[7].year;
+            break;
         }
     })
 });
-// choise pic
+// choise pic in single project
 Array.from(singleProductMiniImages).forEach( el => {
     el.addEventListener('click', () => {
         for ( let i = 0; i < singleProductMiniImages.length; i++) {
@@ -471,7 +474,7 @@ Array.from(singleProductMiniImages).forEach( el => {
         el.style.border = '2px solid rgba(235, 178, 64, 1)';
     })
 });
-// close s.p.
+// close any one single project
 btnCloseSingleProduct.addEventListener('click', () => {
     singleProductView.style.animation = 'p-s-close-go .3s ease-in-out';
     singleProductView.style.opacity = '0';
@@ -482,7 +485,7 @@ btnCloseSingleProduct.addEventListener('click', () => {
 });
 
 // Studio
-// photo choice
+// mini-slider photo choice
 function photoChoice(sel, numPic) {
     sel.addEventListener('click', () => {
         for ( var i = 0; i < studioPhotoChoice.children.length; i++) {
@@ -492,24 +495,24 @@ function photoChoice(sel, numPic) {
         sel.classList.add('studio__photo-active');
     });
 }
-
+// calls
 photoChoice(studioPhotoChoice.children[0], 0);
 photoChoice(studioPhotoChoice.children[1], 1);
 photoChoice(studioPhotoChoice.children[2], 2);
 photoChoice(studioPhotoChoice.children[3], 3);
-// cv view open
+// cv-person view open
 Array.from(cvOpen).forEach( el => {
     el.addEventListener('click', () => {
         cvView.style.display = 'flex';
     })
 });
-// cv view close
+// cv-person view close
 btnCloseCvView.addEventListener('click', () => {
     cvView.style.display = '';
 });
 
 // News
-// read more hover
+// read more - hover
 Array.from(newsReadMore).forEach( el => {
     el.addEventListener('mouseover', () => {
         el.parentNode.children[0].style.background = ' linear-gradient(65deg, rgba(212, 237, 191, 0.9) 35%, transparent 100%)';
@@ -548,7 +551,7 @@ function initMap() {
 };
 
 // Modal sub
-// open
+// modal open
 btnSubOpen.addEventListener('click', () => {
     modalWindow.style.animation = 'modal-open-go .65s ease-out';
     modalWindow.style.display = 'block';
@@ -556,7 +559,7 @@ btnSubOpen.addEventListener('click', () => {
     modalContent.style.display = 'block';
     headerMenu.style.display = '';
 });
-// close
+// modal close
 btnSubClose.addEventListener('click', () => {
     modalWindow.style.animation = 'modal-close-go .30s ease-out';
     modalContent.style.animation = 'modal-content-out-go .30s linear';
@@ -573,12 +576,13 @@ function blurInput(e) {
 function focusInput(e) {
     this.value = (this.value == this.title) ? '' : this.value;
 };
+// to appoint
 Array.from(mailSubInput).forEach( el => {
     el.addEventListener('blur', blurInput);
     el.addEventListener('focus', focusInput);
 });
 // validation
-// regular expression for #input-mail (check)
+// regular expression for #input-mail (check), example: test@test.com
 let regExForMailSub = /\S+@\S+\.\S+/;
 // check #input-name & #input-mail
 function checkInput() {
@@ -609,7 +613,7 @@ mailSubForm.addEventListener('submit', e => {
     mailSubInputMail.value = mailSubInputMail.title;
 });
 
-// Scroll Functionality
+// Scroll functionality
 // footer -> to lift up
 function toLiftUp() {
     let t;
@@ -622,7 +626,7 @@ function toLiftUp() {
 }
 // call
 toLiftUpArrow.onclick = toLiftUp;
-// Scrolling to sections (#projects, #studio, #news, #contact)
+// scrolling to sections (#projects, #studio, #news, #contact)
 function ScrollTo(e) {
     e.preventDefault();
     const speed = 0.5;
@@ -643,12 +647,12 @@ function ScrollTo(e) {
         }
     }
 }
-// Listeners
+// listeners
 linkToProjects.addEventListener('click', ScrollTo, false);
 linkToStudio.addEventListener('click', ScrollTo, false);
 linkToNews.addEventListener('click', ScrollTo, false);
 linkToContact.addEventListener('click', ScrollTo, false);
 
 // Onload
-// auto load obj. (projectsAllColl)
+// auto load obj. (projectsAllColl) in section "projects"
 document.addEventListener("DOMContentLoaded", timelineSortAll(projectsAll));
