@@ -6,9 +6,7 @@
 **Project name:** *DSGN*
 
 **Links:** 
-[https://dsgn18.netlify.com](https://dsgn18.netlify.com)
-
-[https://prounebit.github.io/dsgn/index.html](https://prounebit.github.io/dsgn/index.html)
+[https://dsgn18.netlify.com](https://dsgn18.netlify.com), [https://prounebit.github.io/dsgn/index.html}(https://prounebit.github.io/dsgn/index.html)
 - - -
 ## Folders
 ### stuff
