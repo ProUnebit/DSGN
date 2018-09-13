@@ -1,4 +1,4 @@
-![Project Type](stuff/projects_collection.jpg) ![Project Type](stuff/index.js-fragment-mini.png)
+![Project Type](stuff/projects_collection.jpg)![Project Type](stuff/index.js-fragment-mini.png)
 - - -
 ### Web-Marking
 **Project name:** *DSGN*
