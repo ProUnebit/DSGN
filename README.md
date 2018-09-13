@@ -1,6 +1,4 @@
-![Project Type](https://preview.ibb.co/eaJ4On/index_js_fragment.png)
-
-**index.js** fragment
+![Project Type](stuff/projects_collection.jpg) ![Project Type](stuff/index.js-fragment-mini.png)
 - - -
 ### Web-Marking
 **Project name:** *DSGN*
