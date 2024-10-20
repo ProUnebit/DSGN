@@ -5,7 +5,7 @@
 
 **Links:** 
 
-[https://dsgn18.netlify.com](https://dsgn18.netlify.com)
+[https://dsgn18.netlify.com](https://dsgn18.netlify.app)
 
 [https://prounebit.github.io/dsgn/index.html](https://prounebit.github.io/dsgn/index.html)
 - - -
